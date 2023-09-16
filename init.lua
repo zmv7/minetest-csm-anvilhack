@@ -16,7 +16,7 @@ minetest.register_chatcommand("anvilhack", {
   description = "Look at anvil and use this command",
   func = function(param)
 	local csmr = minetest.get_csm_restrictions()
-	if csmr and not csmr.lookup_nodes then
+	if csmr and csmr.lookup_nodes then
 		local pos = vector.round(minetest.localplayer:get_pos())
 		if is_anvil(pos) then
 			anvilhack_fs(pos)
